@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms - Library Management System</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    h2 {
+      color: darkblue;
+      text-align: center;
+    }
+    form {
+      width: 300px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 15px;
+      background-color: #f9f9f9;
+    }
+    label, input, select, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Library Management System</h1>
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="forms.html">Forms</a> |
+      <a href="tables.html">Tables</a>
+    </div>
+  </header>
+  <main>
+    <h2>Library Forms</h2>
+    <form action="https://httpbin.org/get" method="get">
+      <h3>Search for a Book</h3>
+      <label>Book Title:</label>
+      <input type="text" name="title" required>
+      <label>Category:</label>
+      <select name="category">
+        <option>Science</option>
+        <option>Computer</option>
+        <option>History</option>
+      </select>
+      <input type="submit" value="Search">
+    </form>
+    <form action="https://httpbin.org/get" method="get">
+      <h3>Borrow a Book</h3>
+      <label>Student ID:</label>
+      <input type="text" name="studentId" required>
+      <label>Book ID:</label>
+      <input type="text" name="bookId" required>
+      <label>Borrow Date:</label>
+      <input type="date" name="borrowDate">
+      <input type="submit" value="Borrow">
+    </form>
+    <form action="https://httpbin.org/get" method="get">
+      <h3>Feedback</h3>
+      <label>Your Name:</label>
+      <input type="text" name="name" required>
+      <label>Rate Our Service:</label>
+      <input type="radio" name="rate" value="Good"> Good
+      <input type="radio" name="rate" value="Average"> Average
+      <input type="radio" name="rate" value="Poor"> Poor
+      <label>Comments:</label>
+      <textarea name="comments" rows="4"></textarea>
+      <input type="submit" value="Send Feedback">
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 AGI Team - All Rights Reserved.</p>
+  </footer>
+  <div style="display:none;">inline-css-example</div>
+</body>
+</html>
