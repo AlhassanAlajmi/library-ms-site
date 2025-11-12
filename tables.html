@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables - Library Management System</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Library Management System</h1>
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="forms.html">Forms</a> |
+      <a href="tables.html">Tables</a>
+    </div>
+  </header>
+  <main>
+    <h2 style="text-align:center;">Library Tables</h2>
+    <table>
+      <caption><b>Available Books</b></caption>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>Clean Code</td>
+        <td>Robert Martin</td>
+        <td>Available</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Data Structures</td>
+        <td>Mark Allen</td>
+        <td>Borrowed</td>
+      </tr>
+    </table>
+    <table>
+      <caption><b>Library Opening Hours</b></caption>
+      <tr>
+        <th>Day</th>
+        <th>Morning</th>
+        <th>Evening</th>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>8:00 - 12:00</td>
+        <td>2:00 - 6:00</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td colspan="2">Closed</td>
+      </tr>
+    </table>
+    <table>
+      <caption><b>Top Borrowers</b></caption>
+      <tr>
+        <th>Student Name</th>
+        <th>Books Borrowed</th>
+      </tr>
+      <tr>
+        <td>Ahmed</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>Maryam</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>Hassan</td>
+        <td>15</td>
+      </tr>
+    </table>
+  </main>
+  <footer>
+    <p>&copy; 2025 AGI Team - All Rights Reserved.</p>
+  </footer>
+  <div style="display:none;">inline-css-example</div>
+</body>
+</html>
