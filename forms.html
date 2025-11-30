@@ -36,7 +36,7 @@
     </div>
   </nav>
 
-  <div class="container my-5">
+  <main class="container my-5">
     <h2 class="text-center text-primary mb-4">Library Forms</h2>
     
     <div class="row">
@@ -45,6 +45,7 @@
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Search for a Book</h5>
+            <!-- ID used by JS -->
             <form id="searchBookForm" action="" method="get" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="title" class="form-label">Book Title</label>
@@ -62,19 +63,20 @@
                 <div class="invalid-feedback">Please select a category.</div>
               </div>
               <button type="submit" class="btn btn-primary">Search</button>
-              <div id="searchResult" class="mt-2 text-success"></div>
-
+              <!-- Where JS will print results -->
+              <div id="searchResult" class="mt-3 text-success"></div>
             </form>
           </div>
         </div>
       </div>
-      
+
       <!-- Borrow Book Form -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Borrow a Book</h5>
-            <form id="borrowBookForm" action="" method="get" class="needs-validation" novalidate>
+            <!-- ID used by JS -->
+            <form id="borrowBookForm" action="" method="post" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="studentId" class="form-label">Student ID</label>
                 <input type="text" class="form-control" id="studentId" name="studentId" required>
@@ -89,81 +91,68 @@
                 <label for="borrowDate" class="form-label">Borrow Date</label>
                 <input type="date" class="form-control" id="borrowDate" name="borrowDate">
               </div>
-              <button type="submit" class="btn btn-primary">Borrow</button>
+              <button type="submit" class="btn btn-warning">Borrow</button>
             </form>
           </div>
         </div>
       </div>
-      
-      <!-- Feedback Form -->
+
+      <!-- Feedback Form (extra, not used in JS logic) -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card h-100">
           <div class="card-body">
             <h5 class="card-title">Feedback</h5>
-            <form action="" method="get" class="needs-validation" novalidate>
+            <form action="" method="post" class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="name" class="form-label">Your Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
                 <div class="invalid-feedback">Please provide your name.</div>
               </div>
               <div class="mb-3">
-                <label class="form-label">Rate Our Service</label>
-                <div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="rate" id="good" value="Good" required>
-                    <label class="form-check-label" for="good">Good</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="rate" id="average" value="Average">
-                    <label class="form-check-label" for="average">Average</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="rate" id="poor" value="Poor">
-                    <label class="form-check-label" for="poor">Poor</label>
-                  </div>
-                </div>
-                <div class="invalid-feedback">Please rate our service.</div>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                <div class="invalid-feedback">Please provide a valid email.</div>
               </div>
               <div class="mb-3">
-                <label for="comments" class="form-label">Comments</label>
-                <textarea class="form-control" id="comments" name="comments" rows="4"></textarea>
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                <div class="invalid-feedback">Please enter your feedback.</div>
               </div>
-              <button type="submit" class="btn btn-primary">Send Feedback</button>
+              <button type="submit" class="btn btn-success">Submit Feedback</button>
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <footer class="bg-primary text-white text-center py-3 mt-5">
-    <p class="mb-0">&copy; 2025 AGI Team - All Rights Reserved.</p>
+    <p class="mb-0">&copy; 2025 Library Management System - All Rights Reserved.</p>
   </footer>
 
+  <!-- Our arrays + functions (same file used by tables.html) -->
+  <script src="libraryData.js"></script>
+
+  <!-- Bootstrap-style validation -->
+  <script>
+    (function () {
+      'use strict';
+      var forms = document.querySelectorAll('.needs-validation');
+
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script src="libraryData.js"></script>
-  
-  <!-- Form Validation Script -->
-  <script>
-    // Form validation
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        var forms = document.getElementsByClassName('needs-validation');
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-  </script>
 </body>
 </html>
+
