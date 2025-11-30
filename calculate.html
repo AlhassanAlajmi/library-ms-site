@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System - Calculator</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation Bar (same as index.html) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Library Logo" width="50" class="me-2">
+        Library Management System
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
+          <li class="nav-item"><a class="nav-link" href="tables.html">Tables</a></li>
+          <li class="nav-item"><a class="nav-link" href="List.html">A-Z List</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="memberShipPolicy.html">Membership & Policies</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Page Content -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <h2 class="text-primary text-center mb-4">Library Late Fee Calculator</h2>
+        <p class="text-center text-muted mb-4">
+          This calculator helps library users estimate the total late fee they need to pay
+          based on the number of borrowed books, late days, and membership type.
+        </p>
+
+        <!-- Calculator Form -->
+        <form id="calcForm" class="row g-3 needs-validation" novalidate>
+
+          <!-- Number of borrowed books -->
+          <div class="col-md-4">
+            <label for="numBooks" class="form-label">Number of Borrowed Books</label>
+            <input type="number" id="numBooks" class="form-control" min="1" required>
+            <div class="invalid-feedback">
+              Please enter at least 1 borrowed book.
+            </div>
+          </div>
+
+          <!-- Late days -->
+          <div class="col-md-4">
+            <label for="lateDays" class="form-label">Late Days</label>
+            <input type="number" id="lateDays" class="form-control" min="0" required>
+            <div class="invalid-feedback">
+              Please enter 0 or more late days.
+            </div>
+          </div>
+
+          <!-- Membership type -->
+          <div class="col-md-4">
+            <label for="memberType" class="form-label">Membership Type</label>
+            <select id="memberType" class="form-select" required>
+              <option value="">Choose...</option>
+              <option value="student">Student</option>
+              <option value="staff">Staff</option>
+              <option value="visitor">Visitor</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select your membership type.
+            </div>
+          </div>
+
+          <!-- Optional age (used for additional discount rule) -->
+          <div class="col-md-4">
+            <label for="userAge" class="form-label">Age (optional)</label>
+            <input type="number" id="userAge" class="form-control" min="1" placeholder="e.g. 22">
+            <div class="form-text">
+              Seniors above 60 years may receive an additional discount.
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Calculate Late Fee</button>
+          </div>
+        </form>
+
+        <!-- Result section -->
+        <div id="calcResult" class="mt-4"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3 mt-5">
+    <p class="mb-0">&copy; 2025 AGI Team - All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Calculator Script with detailed comments -->
+  <script>
+    // This function runs when the user submits the calculator form.
+    document.getElementById('calcForm').addEventListener('submit', function(event) {
+
+      const form = this;
+
+      // If the basic HTML5 validation fails, stop here and show errors.
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        return;
+      }
+
+      event.preventDefault(); // Prevent the default form submission behavior.
+
+      // ===========================
+      // 1. Read and prepare values
+      // ===========================
+
+      // Convert the text values from the inputs to numbers using parseInt().
+      const numBooks = parseInt(document.getElementById('numBooks').value, 10);
+      const lateDays = parseInt(document.getElementById('lateDays').value, 10);
+      const memberType = document.getElementById('memberType').value;
+      const ageValue = document.getElementById('userAge').value.trim();
+
+      // Age is optional, so we only convert it when the user enters a value.
+      const age = ageValue === "" ? null : parseInt(ageValue, 10);
+
+      // ===========================
+      // 2. Core calculation logic
+      // ===========================
+
+      // Base rate: the default cost per book per late day (in OMR).
+      const baseRate = 0.200;        // 0.200 OMR = 200 baisa
+      let baseFee = numBooks * lateDays * baseRate;
+      // Here we use the multiplication operator (*) several times:
+      // number of books * late days * rate per book per day.
+
+      // Determine discount percentage based on membership type.
+      // Students and staff get better rates than visitors.
+      let discountPercent = 0;
+      if (memberType === "student") {
+        discountPercent = 0.30;      // 30% discount for students
+      } else if (memberType === "staff") {
+        discountPercent = 0.50;      // 50% discount for staff
+      } else {
+        discountPercent = 0.00;      // no discount for visitors
+      }
+
+      // Additional rule using age:
+      // If the user is a senior (age >= 60), give an extra 10% discount.
+      let extraSeniorDiscount = 0;
+      if (age !== null && age >= 60) {
+        extraSeniorDiscount = 0.10;   // 10% discount for seniors
+      }
+
+      // Total discount percent = membership discount + possible senior discount.
+      const totalDiscountPercent = discountPercent + extraSeniorDiscount;
+
+      // Discount amount = base fee * discount percentage.
+      const discountAmount = baseFee * totalDiscountPercent;
+
+      // Final fee after discount.
+      let finalFee = baseFee - discountAmount;
+
+      // ===========================
+      // 3. Extra conditions and rules
+      // ===========================
+
+      // Extra fine rule:
+      // If late days are more than 10 and there is some fee,
+      // we add a fixed extra fine of 1 OMR.
+      let extraFine = 0;
+      if (lateDays > 10 && finalFee > 0) {
+        extraFine = 1.000;           // extra fine in OMR
+      }
+
+      // Another safety rule:
+      // If there are no late days, the fee should be exactly zero.
+      if (lateDays === 0) {
+        finalFee = 0;
+        extraFine = 0;
+      }
+
+      // Total amount to pay = final fee + any extra fine.
+      const totalToPay = finalFee + extraFine;
+
+      // ===========================
+      // 4. Show the result to the user
+      // ===========================
+
+      const resultDiv = document.getElementById('calcResult');
+
+      // Build a small Bootstrap card to display the result nicely.
+      resultDiv.innerHTML = `
+        <div class="card">
+          <div class="card-body">
+            <h3 class="h5 mb-3">Calculation Result</h3>
+
+            <p class="mb-1">Number of books: <strong>${numBooks}</strong></p>
+            <p class="mb-1">Late days: <strong>${lateDays}</strong></p>
+            <p class="mb-3">Membership type: <strong>${memberType}</strong></p>
+
+            <p class="mb-1">Base fee: <strong>${baseFee.toFixed(3)} OMR</strong></p>
+            <p class="mb-1">
+              Total discount (${(totalDiscountPercent * 100).toFixed(0)}%):
+              -<strong>${discountAmount.toFixed(3)} OMR</strong>
+            </p>
+            <p class="mb-1">
+              Extra fine for long delay:
+              <strong>${extraFine.toFixed(3)} OMR</strong>
+            </p>
+
+            <hr>
+            <p class="mb-0">
+              Total amount to pay:
+              <strong>${totalToPay.toFixed(3)} OMR</strong>
+            </p>
+          </div>
+        </div>
+      `;
+
+      // Add Bootstrap's visual validation style after first submit.
+      form.classList.add('was-validated');
+    });
+  </script>
+
+</body>
+</html>
