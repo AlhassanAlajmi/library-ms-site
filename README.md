@@ -9,19 +9,10 @@ This project is part of **COMP3700 – Introduction to Web Computing (Fall 2025)
 - Isshaq AlHasani
 
 ## Project Overview
-A static website built using **HTML and CSS** for a Library Management System.  
-The website includes:
-- Navigation menu and logo on all pages  
-- Contact and About pages  
-- Multiple forms submitted to httpbin.org  
-- Tables with formatted layout and merged cells  
-- Uniform and responsive design
-
 This report presents Project Part 3 of the Library Management System. 
-This phase includes 
--Bootstrap formatting
--JavaScript functionality
--GitHub collaboration
-website hosting.
+The website includes:
+- Bootstrap formatting
+- JavaScript functionality 
+- website hosting. 
 
 This project will be published on GitHub Pages and a free hosting site.
