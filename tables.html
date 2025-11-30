@@ -4,141 +4,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tables - Library Management System</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Library Management System</h1>
-    <img src="assets/img/logo.png" alt="Library Logo" width="100">
-    <div>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="forms.html">Forms</a> |
-      <a href="tables.html">Tables</a> |
-      <a href="List.html">A-Z List</a> |
-      <a href="services.html">Services</a>|
-      <a href="memberShipPolicy.html">Membership and policies</a> |
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Library Logo" width="50" class="d-inline-block align-text-top me-2">
+        Library Management System
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tables.html">Tables</a></li>
+          <li class="nav-item"><a class="nav-link" href="List.html">A-Z List</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="memberShipPolicy.html">Membership & Policies</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
-  <main>
-    <h2 style="color: darkgreen;">Library Tables</h2>
-    <table>
-      <caption><b>Available Books</b></caption>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Status</th>
-      </tr>
- </tr>
-    <tr><td>1112</td> <td>1984</td><td>George Orwell</td><td>Available</td></tr>
-    <tr><td>1125</td><td>Clean Code</td><td>Robert Martin</td><td>Available</td></tr>
-    <tr><td>1144</td><td>Data Structures</td><td>Mark Allen</td><td>Available</td></tr>
-    <tr><td>1151</td><td>Don Quixote</td><td>Miguel de Cervantes</td><td>Available</td></tr>
-    <tr><td>1162</td><td>Emma</td><td>Jane Austen</td><td>Available</td></tr>
-    <tr><td>1177</td><td>Fahrenheit 451</td><td>Ray Bradbury</td><td>Available</td></tr>
-    <tr><td>1183</td><td>Frankenstein</td><td>Mary Shelley</td><td>Available</td></tr>
-    <tr><td>1201</td><td>Great Expectations</td><td>Charles Dickens</td><td>Available</td></tr>
-    <tr><td>1214</td><td>Hamlet</td><td>William Shakespeare</td><td>Available</td></tr>
-    <tr><td>1222</td><td>Heart of Darkness</td><td>Joseph Conrad</td><td>Available</td></tr>
-    <tr><td>1238</td><td>It</td><td>Stephen King</td><td>Available</td></tr>
-    <tr><td>1247</td><td>Jurassic Park</td><td>Michael Crichton</td><td>Available</td></tr>
-    <tr><td>1255</td><td>Lord of the Flies</td><td>William Golding</td><td>Available</td></tr>
-    <tr><td>1260</td><td>Metro 2033</td><td>Dmitry Glukhovsky</td><td>Available</td></tr>
-    <tr><td>1273</td><td>Moby-Dick</td><td>Herman Melville</td><td>Available</td></tr>
-    <tr><td>1288</td><td>Nineteen Eighty-Four</td><td>George Orwell</td><td>Available</td></tr>
-    <tr><td>1299</td><td>Oliver Twist</td><td>Charles Dickens</td><td>Available</td></tr>
-    <tr><td>1304</td><td>Quantum Thief</td><td>Hannu Rajaniemi</td><td>Available</td></tr>
-    <tr><td>1310</td><td>Slaughterhouse-Five</td><td>Kurt Vonnegut</td><td>Available</td></tr>
-    <tr><td>1326</td><td>The Road</td><td>Cormac McCarthy</td><td>Available</td></tr>
-    <tr><td>1339</td><td>Ulysses</td><td>James Joyce</td><td>Available</td></tr>
-    <tr><td>1342</td><td>Vicious</td><td>V. E. Schwab</td><td>Available</td></tr>
-    <tr><td>1351</td><td>Watership Down</td><td>Richard Adams</td><td>Available</td></tr>
-    </table>
-    
-    <table>
-      <caption><b>Borrowed Books</b></caption>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Status</th>
-      </tr>
- <tr><td>2104</td><td>All the Light We Cannot See</td><td>Anthony Doerr</td><td>Borrowed</td></tr>
-    <tr><td>2111</td><td>And Then There Were None</td><td>Agatha Christie</td><td>Borrowed</td></tr>
-    <tr><td>2122</td><td>Brave New World</td><td>Aldous Huxley</td><td>Borrowed</td></tr>
-    <tr><td>2130</td><td>Crime and Punishment</td><td>Fyodor Dostoevsky</td><td>Borrowed</td></tr>
-    <tr><td>2146</td><td>Eleanor Oliphant Is Completely Fine</td><td>Gail Honeyman</td><td>Borrowed</td></tr>
-    <tr><td>2163</td><td>Invisible Man</td><td>Ralph Ellison</td><td>Borrowed</td></tr>
-    <tr><td>2179</td><td>Jane Eyre</td><td>Charlotte Brontë</td><td>Borrowed</td></tr>
-    <tr><td>2188</td><td>Kafka on the Shore</td><td>Haruki Murakami</td><td>Borrowed</td></tr>
-    <tr><td>2195</td><td>Mrs. Dalloway</td><td>Virginia Woolf</td><td>Borrowed</td></tr>
-    <tr><td>2202</td><td>Quiet: The Power of Introverts...</td><td>Susan Cain</td><td>Borrowed</td></tr>
-    <tr><td>2217</td><td>Rebecca</td><td>Daphne du Maurier</td><td>Borrowed</td></tr>
-    <tr><td>2231</td><td>The Trail</td><td>Franz Kafka</td><td>Borrowed</td></tr>
-    <tr><td>2240</td><td>Uncle Tom's Cabin</td><td>Harriet Beecher Stowe</td><td>Borrowed</td></tr>
-    <tr><td>2252</td><td>Wuthering Heights</td><td>Emily Brontë</td><td>Borrowed</td></tr>
-    <tr><td>2266</td><td>Young Goodman Brown and Other Stories</td><td>Nathaniel Hawthorne</td><td>Borrowed</td></tr>
-    <tr><td>2277</td><td>Zen and the Art of Motorcycle Maintenance</td><td>Robert M. Pirsig</td><td>Borrowed</td></tr>
-    <tr><td>2290</td><td>Zorba the Greek</td><td>Nikos Kazantzakis</td><td>Borrowed</td></tr>
-    </table>
+  </nav>
 
+  <main class="container my-5">
+    <h2 class="text-center text-success mb-4">Library Tables</h2>
     
-    <table>
-      <caption><b>Library Opening Hours</b></caption>
-      <tr>
-        <th>Day</th>
-        <th>Morning</th>
-        <th>Evening</th>
-      </tr>
-      <tr>
-        <td>Sunday</td>
-        <td>8:00 - 12:00</td>
-        <td>2:00 - 6:00</td>
-      </tr>
-      <tr>
-        <td>Friday</td>
-        <td colspan="2">Closed</td>
-      </tr>
-    </table>
-    <table>
-      <caption><b>Top Borrowers</b></caption>
-      <tr>
-        <th>Student Name</th>
-        <th>Books Borrowed</th>
-      </tr>
-      <tr>
-        <td>Ahmed</td>
-        <td>7</td>
-      </tr>
-      <tr>
-        <td>Maryam</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>Hassan</td>
-        <td>5</td>
-      </tr>
-    </table>
+    <!-- Available Books Table -->
+    <div class="table-responsive mb-5">
+      <table class="table table-striped table-hover">
+        <caption class="caption-top"><h4>Available Books</h4></caption>
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1112</td> <td>1984</td><td>George Orwell</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1125</td><td>Clean Code</td><td>Robert Martin</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1144</td><td>Data Structures</td><td>Mark Allen</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1151</td><td>Don Quixote</td><td>Miguel de Cervantes</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1162</td><td>Emma</td><td>Jane Austen</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1177</td><td>Fahrenheit 451</td><td>Ray Bradbury</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1183</td><td>Frankenstein</td><td>Mary Shelley</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1201</td><td>Great Expectations</td><td>Charles Dickens</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1214</td><td>Hamlet</td><td>William Shakespeare</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1222</td><td>Heart of Darkness</td><td>Joseph Conrad</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1238</td><td>It</td><td>Stephen King</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1247</td><td>Jurassic Park</td><td>Michael Crichton</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1255</td><td>Lord of the Flies</td><td>William Golding</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1260</td><td>Metro 2033</td><td>Dmitry Glukhovsky</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1273</td><td>Moby-Dick</td><td>Herman Melville</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1288</td><td>Nineteen Eighty-Four</td><td>George Orwell</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1299</td><td>Oliver Twist</td><td>Charles Dickens</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1304</td><td>Quantum Thief</td><td>Hannu Rajaniemi</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1310</td><td>Slaughterhouse-Five</td><td>Kurt Vonnegut</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1326</td><td>The Road</td><td>Cormac McCarthy</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1339</td><td>Ulysses</td><td>James Joyce</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1342</td><td>Vicious</td><td>V. E. Schwab</td><td><span class="badge bg-success">Available</span></td></tr>
+          <tr><td>1351</td><td>Watership Down</td><td>Richard Adams</td><td><span class="badge bg-success">Available</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Borrowed Books Table -->
+    <div class="table-responsive mb-5">
+      <table class="table table-striped table-hover">
+        <caption class="caption-top"><h4>Borrowed Books</h4></caption>
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2104</td><td>All the Light We Cannot See</td><td>Anthony Doerr</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2111</td><td>And Then There Were None</td><td>Agatha Christie</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2122</td><td>Brave New World</td><td>Aldous Huxley</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2130</td><td>Crime and Punishment</td><td>Fyodor Dostoevsky</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2146</td><td>Eleanor Oliphant Is Completely Fine</td><td>Gail Honeyman</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2163</td><td>Invisible Man</td><td>Ralph Ellison</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2179</td><td>Jane Eyre</td><td>Charlotte Brontë</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2188</td><td>Kafka on the Shore</td><td>Haruki Murakami</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2195</td><td>Mrs. Dalloway</td><td>Virginia Woolf</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2202</td><td>Quiet: The Power of Introverts...</td><td>Susan Cain</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2217</td><td>Rebecca</td><td>Daphne du Maurier</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2231</td><td>The Trail</td><td>Franz Kafka</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2240</td><td>Uncle Tom's Cabin</td><td>Harriet Beecher Stowe</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2252</td><td>Wuthering Heights</td><td>Emily Brontë</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2266</td><td>Young Goodman Brown and Other Stories</td><td>Nathaniel Hawthorne</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2277</td><td>Zen and the Art of Motorcycle Maintenance</td><td>Robert M. Pirsig</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+          <tr><td>2290</td><td>Zorba the Greek</td><td>Nikos Kazantzakis</td><td><span class="badge bg-warning">Borrowed</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Opening Hours Table -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <caption class="caption-top"><h4>Library Opening Hours</h4></caption>
+            <thead class="table-light">
+              <tr>
+                <th>Day</th>
+                <th>Morning</th>
+                <th>Evening</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sunday</td>
+                <td>8:00 - 12:00</td>
+                <td>2:00 - 6:00</td>
+              </tr>
+              <tr>
+                <td>Monday</td>
+                <td>8:00 - 12:00</td>
+                <td>2:00 - 6:00</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>8:00 - 12:00</td>
+                <td>2:00 - 6:00</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>8:00 - 12:00</td>
+                <td>2:00 - 6:00</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>8:00 - 12:00</td>
+                <td>2:00 - 6:00</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td colspan="2" class="text-center text-danger fw-bold">Closed</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>8:00 - 12:00</td>
+                <td>2:00 - 6:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <!-- Top Borrowers Table -->
+      <div class="col-md-6 mb-4">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <caption class="caption-top"><h4>Top Borrowers</h4></caption>
+            <thead class="table-light">
+              <tr>
+                <th>Student Name</th>
+                <th>Books Borrowed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ahmed</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Maryam</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Hassan</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </main>
-  <footer>
-    <p>&copy; 2025 AGI Team - All Rights Reserved.</p>
+
+  <footer class="bg-primary text-white text-center py-3 mt-5">
+    <p class="mb-0">&copy; 2025 AGI Team - All Rights Reserved.</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
