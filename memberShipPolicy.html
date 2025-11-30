@@ -3,44 +3,218 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Membership and Policies - Library Management System</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Membership and policies</h1>
-    <img src="assets/img/logo.png" alt="Library Logo" width="100">
-    <div>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="forms.html">Forms</a> |
-      <a href="tables.html">Tables</a> |
-      <a href="List.html">A-Z List</a> |
-     <a href="services.html">Services</a> |
-<a href="memberShipPolicy.html">Membership and policies</a> |
-     
-
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/img/logo.png" alt="Library Logo" width="50" class="d-inline-block align-text-top me-2">
+        Library Management System
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="forms.html">Forms</a></li>
+          <li class="nav-item"><a class="nav-link" href="tables.html">Tables</a></li>
+          <li class="nav-item"><a class="nav-link" href="List.html">A-Z List</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="memberShipPolicy.html">Membership & Policies</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
-  <body>
+  </nav>
 
-    <h4 style="font-weight: bold;">Become a member to get the free access to all our resources!</h4>
-    <h3 style="font-weight: bold">requirements:</h3>
-    <ol start="1">
-        <li>Proof of address. </li>
-        <li>University card and ID / Personal card / Driving license .</li>
-    </ol>
-   
- <h3 style="font-weight: bold">Key policies:
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h2 class="text-center text-primary mb-5">Membership and Policies</h2>
+        
+        <!-- Membership Section -->
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">
+              Become a Member
+            </h4>
+          </div>
+          <div class="card-body">
+            <p class="lead">Become a member to get free access to all our resources!</p>
+            
+            <h5 class="text-primary mt-4">Requirements:</h5>
+            <ol class="list-group list-group-numbered mb-4">
+              <li class="list-group-item">Proof of address</li>
+              <li class="list-group-item">University card and ID / Personal card / Driving license</li>
+            </ol>
+            
+            <!-- Membership Application Button -->
+            <div class="text-center mt-4">
+              <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#membershipModal">
+                Apply for Membership
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Policies Section -->
+        <div class="card">
+          <div class="card-header bg-warning text-dark">
+            <h4 class="mb-0">
+              Key Policies
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 border-primary">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mt-2">Borrowing Periods</h5>
+                    <p class="card-text">4 weeks maximum borrowing period</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 border-warning">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mt-2">Fines</h5>
+                    <p class="card-text">Overdue fines are $0.5/day per book</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card h-100 border-danger">
+                  <div class="card-body text-center">
+                    <h5 class="card-title mt-2">Lost/Damaged Items</h5>
+                    <p class="card-text">Patrons are responsible for replacement cost</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Additional Policies -->
+            <div class="mt-4">
+              <h5 class="text-primary">Additional Policies:</h5>
+              <div class="accordion" id="policiesAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#policyOne">
+                      Renewal Policy
+                    </button>
+                  </h2>
+                  <div id="policyOne" class="accordion-collapse collapse show" data-bs-parent="#policiesAccordion">
+                    <div class="accordion-body">
+                      Books can be renewed up to 2 times if there are no holds on them. Renewals can be done online or in person.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#policyTwo">
+                      Reservation Policy
+                    </button>
+                  </h2>
+                  <div id="policyTwo" class="accordion-collapse collapse" data-bs-parent="#policiesAccordion">
+                    <div class="accordion-body">
+                      Members can reserve books that are currently checked out. You will be notified when the book becomes available.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#policyThree">
+                      Conduct Policy
+                    </button>
+                  </h2>
+                  <div id="policyThree" class="accordion-collapse collapse" data-bs-parent="#policiesAccordion">
+                    <div class="accordion-body">
+                      Please maintain quiet study environment. Food and drinks are allowed only in designated areas.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-</h3>
-  <ul type="cicle">
-        <li>Borrowing periods: 4 weeks </li>
-        <li>Fines: Overdue fines are 0.5$/day per book.</li>
-        <li>Lost/Damaged items: Patrons are responsible for the replacment cost of lost or damaged items</li>
-    </ul>
+  <!-- Membership Application Modal -->
+  <div class="modal fade" id="membershipModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Membership Application</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="fullName" required>
+              <div class="invalid-feedback">Please provide your full name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">Please provide a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" required>
+              <div class="invalid-feedback">Please provide your phone number.</div>
+            </div>
+            <div class="mb-3">
+              <label for="idType" class="form-label">ID Type</label>
+              <select class="form-select" id="idType" required>
+                <option value="" selected disabled>Select ID Type</option>
+                <option value="university">University Card</option>
+                <option value="personal">Personal ID</option>
+                <option value="driving">Driving License</option>
+              </select>
+              <div class="invalid-feedback">Please select an ID type.</div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit Application</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  </body></html>
+  <footer class="bg-primary text-white text-center py-3 mt-5">
+    <p class="mb-0">&copy; 2025 AGI Team - All Rights Reserved.</p>
+  </footer>
 
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Form Validation Script -->
+  <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+</body>
+</html>
